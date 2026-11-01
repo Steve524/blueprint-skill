@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="title desc">
+  <title id="title">blueprint — Plan first. Council-reviewed. Then stop.</title>
+  <desc id="desc">A blueprint drawing of three parallel research groups, A, B, and C, feeding a phased plan and three council reviewers, ending in an approval check. Building stays paused.</desc>
+  <defs>
+    <linearGradient id="paper" x2="1" y2="1">
+      <stop stop-color="#0B3D86"/>
+      <stop offset="1" stop-color="#102F61"/>
+    </linearGradient>
+    <pattern id="fine" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#B8E5FF" stroke-opacity=".065"/>
+    </pattern>
+    <pattern id="major" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#B8E5FF" stroke-opacity=".12"/>
+    </pattern>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="m1 1 4 2-4 2" fill="none" stroke="#B8E8FF" stroke-width="1.4"/>
+    </marker>
+    <style>
+      text { font-family: ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .label { font-size: 11px; letter-spacing: 1.6px; fill: #B8E8FF; }
+      .wire { fill: none; stroke: #B8E8FF; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+    </style>
+  </defs>
+  <path fill="url(#paper)" d="M0 0h1280v320H0z"/>
+  <path fill="url(#fine)" d="M0 0h1280v320H0z"/>
+  <path fill="url(#major)" d="M0 0h1280v320H0z"/>
+
+  <!-- Drawing frame and registration corners. -->
+  <rect x="24.5" y="24.5" width="1231" height="271" fill="none" stroke="#B8E8FF" stroke-opacity=".22"/>
+  <path d="M24 44V24h20 M1236 24h20v20 M24 276v20h20 M1236 296h20v-20" class="wire"/>
+  <path d="M636.5 64v192" stroke="#B8E8FF" stroke-opacity=".22" stroke-dasharray="3 7"/>
+
+  <!-- Wordmark. -->
+  <text x="66" y="84" class="mono label">AN AGENT SKILL / BEFORE THE BUILD</text>
+  <text x="62" y="172" fill="#F5FBFF" font-size="88" font-weight="650" letter-spacing="-3.6">blueprint</text>
+  <text x="66" y="216" fill="#E1F4FF" font-size="22">Plan first. Council-reviewed. Then stop.</text>
+  <path d="M66 247h38" class="wire"/>
+  <text x="116" y="251" class="mono" font-size="11" letter-spacing="1.2" fill="#B8E8FF">REQUEST → REVIEWED PLAN</text>
+
+  <!-- Dimension line. -->
+  <g fill="none" stroke="#B8E8FF" stroke-opacity=".5" stroke-width="1">
+    <path d="M688 49h498 M688 44v10 M1186 44v10 M685 52l6-6 M1183 52l6-6"/>
+  </g>
+  <text x="688" y="81" class="mono label">01 / RECON</text>
+  <text x="875" y="81" class="mono label">02 / PLAN</text>
+  <text x="1039" y="81" class="mono label">03 / COUNCIL</text>
+
+  <!-- Independent recon branches join at the plan. -->
+  <g class="wire">
+    <rect x="688" y="100" width="96" height="40" fill="#103C79"/>
+    <rect x="688" y="160" width="96" height="40" fill="#103C79"/>
+    <rect x="688" y="220" width="96" height="40" fill="#103C79"/>
+    <path d="M784 120h41v120h-41 M784 180h84" marker-end="url(#arrow)"/>
+  </g>
+  <g fill="#F5FBFF" font-size="17" font-weight="600" class="mono" text-anchor="middle">
+    <text x="736" y="126">A</text>
+    <text x="736" y="186">B</text>
+    <text x="736" y="246">C</text>
+  </g>
+  <circle cx="825" cy="180" r="3" fill="#D9F4FF"/>
+
+  <!-- Folded plan sheet with three phases. -->
+  <g class="wire">
+    <path d="M878 108h82l26 26v112H878z" fill="#103C79"/>
+    <path d="M960 108v26h26"/>
+    <path d="M894 164h76" stroke-opacity=".5"/>
+    <path d="M907 185h59 M907 205h47 M907 225h59"/>
+    <path d="M894 181h6v6h-6z M894 201h6v6h-6z M894 221h6v6h-6z"/>
+    <path d="M986 180h36" marker-end="url(#arrow)"/>
+  </g>
+  <text x="893" y="151" fill="#F5FBFF" font-size="17" font-weight="600" class="mono">plan</text>
+
+  <!-- Three reviewers converge on one approval. -->
+  <g class="wire">
+    <circle cx="1054" cy="137" r="14"/>
+    <circle cx="1100" cy="137" r="14"/>
+    <circle cx="1146" cy="137" r="14"/>
+    <path d="M1054 151v29h92v-29 M1100 151v45 M1028 180h26"/>
+    <circle cx="1100" cy="222" r="22" fill="#164C83" stroke="#DEFAFF"/>
+    <path d="m1090 222 7 7 14-15" stroke="#F5FBFF" stroke-width="2.5"/>
+  </g>
+  <g fill="#D9F4FF">
+    <circle cx="1054" cy="137" r="3"/>
+    <circle cx="1100" cy="137" r="3"/>
+    <circle cx="1146" cy="137" r="3"/>
+  </g>
+  <text x="1100" y="263" class="mono" font-size="10" letter-spacing="1.1" fill="#B8E8FF" text-anchor="middle">ALL APPROVE</text>
+
+  <!-- Small drawing title block. -->
+  <path d="M1008 278.5h247" stroke="#B8E8FF" stroke-opacity=".3"/>
+  <text x="1023" y="290" class="mono" font-size="9" letter-spacing="1" fill="#B8E8FF">BUILD: PAUSED</text>
+  <text x="1238" y="290" class="mono" font-size="9" letter-spacing="1" fill="#B8E8FF" text-anchor="end">BP—001</text>
+</svg>

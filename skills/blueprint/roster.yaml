@@ -1,0 +1,18 @@
+# Who blueprint uses. Each group is a list; instances = how many delegates that entry may run at once, per step.
+# inherit = the host's own provider, model, or effort. Missing fields mean inherit; missing instances means 1.
+# provider = an exact providerInstanceId from orchestrator_capabilities. Naming a provider means naming its model too.
+# effort maps to each model's own option (effort, reasoningEffort, variant...).
+# The council skill picks its own members, so they don't go here.
+
+code:      # group A, codebase
+  - {provider: inherit, model: inherit, effort: inherit, instances: 1}
+stack:     # group B, stack and docs
+  - {provider: inherit, model: inherit, effort: inherit, instances: 1}
+research:  # group C, deep research: finders and readers. Synthesis uses the first entry.
+  - {provider: inherit, model: inherit, effort: inherit, instances: 3}
+
+# Example research lineup (provider ids are per machine; check orchestrator_capabilities):
+# research:
+#   - {provider: <provider-a>, model: <model-a>, effort: high, instances: 6}
+#   - {provider: <provider-b>, model: <model-b>, effort: high, instances: 2}
+#   - {provider: <provider-b-second-account>, model: <model-b>, effort: high, instances: 2}
