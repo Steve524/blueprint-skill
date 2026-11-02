@@ -13,7 +13,7 @@ Say `blueprint` to your coding agent. It researches, asks you only the questions
 Agents build faster than people can check. Most bad builds start as a bad plan: a wrong assumption, a missed requirement, a phase nobody can verify. blueprint puts the effort before the code:
 
 - **Research first,** so questions are informed and facts aren't asked.
-- **Only real decisions go to you,** one at a time, each with a recommendation.
+- **Only real decisions go to you,** five at once, each with a recommendation.
 - **Independent review** from three providers, with a hard round limit.
 - **A hard stop.** Planning never turns into building by accident.
 
@@ -28,10 +28,10 @@ intake ─▶ recon ─▶ interview ─▶ plan ─▶ council ─▶ hand-off
 
 1. **Intake.** Goal, done-when, out of scope. Picks the level: one plan, or an initiative map of epics.
 2. **Recon.** Delegates in parallel. A reads the codebase (if there is one). B checks libraries and APIs. C runs deep research only when it could change a decision, and only after you approve its 3-5 questions.
-3. **Interview.** One sourced assumptions ledger, then load-bearing questions one per message. "Yes" takes the recommendation. "Accept all remaining recommendations" ends it.
+3. **Interview.** One sourced assumptions ledger, then up to 5 questions in one message. Reply by number; "yes" or a skipped number takes the recommendation.
 4. **Plan.** One markdown file with requirement ids, decisions with sources, and phases. Each phase has files, steps, and an exact check.
-5. **Council.** Three reviewers from different providers. APPROVE or REVISE, blocker / should / nit. Every member must approve the same revision. Max 3 rounds; deadlocks come back to you.
-6. **Hand-off.** The plan path, the phases, and the review record. Nothing is built.
+5. **Council.** Three reviewers from different providers. APPROVE or REVISE, blocker / should / nit. Every member must approve the same revision. Max 3 rounds; leftover disputes are settled by the coordinator and logged.
+6. **Hand-off.** A finished plan: the path, the phases, the review record, and where to start building. Nothing is built.
 
 More detail: [docs/how-it-works.md](docs/how-it-works.md).
 

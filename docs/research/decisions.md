@@ -24,7 +24,7 @@ Each entry: what we chose, why, and what we rejected. Reopen one only with new e
 |---|---|---|---|
 | D7 | Intake = goal, done-when, out of scope, asked once | Enough to aim recon without an interview first | A long upfront interview |
 | D8 | One-commit changes get an inline plan instead | Planning ceremony on trivial work is waste | Always running the full skill |
-| D9 | Initiative level: only when a later part can't be detailed today | BMAD's thin epics, written just in time. 5 of 10 round 2 delegates said defer or keep it light, so it's compact: a map file, and one blueprint run per epic later | BMAD's ticket tree, Linear-style tracking, deferring entirely |
+| D9 | Initiative level: only when a later part can't be detailed today | BMAD's thin epics, written just in time. 5 of 10 round 2 delegates said defer or keep it light, so it's compact: a map file with E1 planned in full (so building can start, 2026-11-02), and one blueprint run per later epic | BMAD's ticket tree, Linear-style tracking, deferring entirely |
 | D10 | Epic runs keep each map decision's source | Otherwise defaults turn into "the user decided" and escape council review | Treating all map decisions as `user` |
 
 ## Recon
@@ -57,9 +57,9 @@ Each entry: what we chose, why, and what we rejected. Reopen one only with new e
 | # | Decision | Why | Rejected |
 |---|---|---|---|
 | D26 | Inline claudex-style rules; don't call `grilling` | grilling stops only when everything is settled, and asks the whole frontier per round. A calling skill can't override that | Calling `grilling` or `grill-with-docs` |
-| D27 | Load-bearing questions one per message, at most 4 lines; "yes" takes the recommendation | ADD-friendly, and fast to answer | Multi-paragraph questions, option menus |
+| D27 | Up to 5 questions in one message (Q1-Q5), load-bearing first, at most 4 lines each; reply by number; extras default into the wrap-up. Revised 2026-11-02 | The author found one-per-message slow; one batch is one round trip. Never pad below 5 | One per message (old D27), a second batch, multi-paragraph questions |
 | D28 | Approach choices list 2-3 options first | Karpathy and Anthropic's feature-dev: compare before picking | A single recommendation only |
-| D29 | "Accept all remaining recommendations" in every question message | The escape hatch from claudex-loop | Relentless grilling |
+| D29 | "Accept all recommendations" in the question message | The escape hatch from claudex-loop | Relentless grilling |
 | D30 | `user` vs `default` source; only `user` decisions are closed to council | Silence isn't consent (council round 1 blocker) | "Unmarked = confirmed" |
 
 ## Plan
@@ -81,6 +81,7 @@ Each entry: what we chose, why, and what we rejected. Reopen one only with new e
 | D38 | Any addition must name the requirement it protects; zero findings is valid | Stops scope creep and manufactured findings (BMAD's 10-finding quota caused endless loops) | Minimum finding counts |
 | D39 | Coordinator re-grades severity; disputes need evidence | Neither rubber-stamp nor capture | Accepting labels as given |
 | D40 | 3 rounds; 5 only for high-stakes areas with an open evidenced issue | Council upstream has no cap. Budget end is not approval | Unbounded "until satisfied" |
+| D40b | A dispute after two replies, or budget end: the coordinator settles it (smallest option that reaches every done-when, logged with evidence) and sets `ready`, not `reviewed`. A reopened `user` decision still goes to the user. Added 2026-11-02 | The run must end in a plan you can build from; `ready` keeps it honest that not every member approved | `stuck`, handing disputes back to the user |
 | D41 | Approval binds to a Revision number | Nothing consumes a hash yet; the revision echo does the job | SHA256 hashing and a separate log |
 | D42 | Fresh delegates every round; the plan is frozen during review | Delegates have no history | Resuming the same session |
 | D43 | No self-review fallback. Council can't run → `draft` | "reviewed" must mean independent review | Self-review outside T3 |

@@ -137,18 +137,22 @@ The brief is input. The plan links it and copies the decisions it needs.
 2. **Decision map.** List the open decisions. Load-bearing: a wrong answer
    costs a migration, a rewrite, a security hole, or user trust. Cosmetic:
    the rest. Show `n/m settled` as they close.
-3. **Load-bearing questions,** one per message, at most 4 lines, worded so
-   "yes" takes your recommendation. For a choice between approaches, name
-   2-3 options in a line each first. If the "if wrong" part comes out weak,
-   demote the question to cosmetic. If code or recon answers it, log the
-   answer and don't ask.
+3. **Five questions, in one message.** Q1-Q5: the load-bearing ones
+   first, costliest if wrong first, then the cosmetic ones that matter
+   most. Fewer than 5 open: ask
+   those; never pad. More than 5: the rest take your recommendation and
+   go in the wrap-up. Each question at most 4 lines, worded so "yes" takes
+   your recommendation. For a choice between approaches, name 2-3 options
+   in a line each first. If the "if wrong" part comes out weak, it's
+   cosmetic. If code or recon answers it, log the answer and don't ask.
+   The user replies by number (`1 yes, 2 B, 4 no: use X`); a number left
+   out takes the recommendation.
 4. Collect factual gaps the answers open. Send them to the one follow-up
    recon delegate.
-5. **Wrap-up:** one message with the cosmetic defaults and a 5-line
-   summary. "Say ok or correct." Wait for it.
+5. **Wrap-up:** one message with the defaults not asked in Q1-Q5,
+   load-bearing first, and a 5-line summary. "Say ok or correct." Wait for it.
 
-End every question message with "Or say 'accept all remaining
-recommendations'."
+End the question message with "Or say 'accept all recommendations'."
 
 Source `user` means the user answered it. Anything accepted by silence,
 "ok", or "accept all" is `default`. Only `user` decisions are closed to the
@@ -185,7 +189,7 @@ Planning ends here. Building needs a separate request.
 - Steps: 1. ...
 - Done when: `<exact command>` -> <expected>, or <manual check>
 - Excludes: <nearby work left for later>
-## Risks and open questions
+## Risks
 ## Review             verdicts by member and round, declined findings with reasons
 ```
 
@@ -196,15 +200,19 @@ Planning ends here. Building needs a separate request.
 - Every Done when names how it is checked. A phase with no check gets
   smaller.
 - Never write a check result you didn't run.
+- No TBDs or open questions. Settle each one before council: your
+  recommendation becomes a decision with source `default`.
 
 **Initiative:** write a map instead, at `<yyyy-mm-dd>-<slug>-initiative.md`.
 Same template, with `## Phases` replaced by
-`| Epic | Delivers | Covers | Depends on | Done when |`. No files or steps.
-Decisions every epic shares live in the map. E1 is the thinnest usable
-outcome. Each epic gets its own blueprint run later, which links the map
-and keeps each map decision's source; only `user` ones are closed.
+`| Epic | Delivers | Covers | Depends on | Done when |`. Decisions every
+epic shares live in the map. E1 is the thinnest usable outcome. Plan E1's
+phases in full under the table, so building can start; later epics get no
+files or steps. Each later epic gets its own blueprint run, which links the
+map and keeps each map decision's source; only `user` ones are closed.
 
-Before council, show the phase or epic table: "Say ok or regroup."
+Before council, show the phase table (for a map, the epic table and E1's
+phases): "Say ok or regroup."
 
 ## 6. Council
 
@@ -224,7 +232,8 @@ epic covers, wrong assumptions, steps a builder with no history can't
 follow, order that breaks, a phase with no runnable done-when, simpler
 alternatives, anything the Goal doesn't need.
 For an initiative map: judge epic boundaries, order, coverage, and that each
-epic's done-when is checkable. Maps have no files or steps on purpose.
+epic's done-when is checkable. Judge E1's phases as plan phases. Later
+epics have no files or steps on purpose.
 Any addition must name the requirement it protects and what breaks without it.
 Zero findings is a valid answer.
 blocker = builds the wrong thing, or a phase or epic can't reach its done-when.
@@ -252,20 +261,22 @@ id `resolved` or `still open: <reason>`."
 - **Agreed:** every member says APPROVE, and no blocker or should is open
   on the current Revision. Nit-only edits need no new round. Set
   `Status: reviewed`.
-- **Stuck:** an item is still disputed after two replies, or the budget
-  ends. Set `Status: stuck`. Budget end is not approval.
+- **Settled:** an item is still disputed after two replies, or the budget
+  ends. Settle each open item yourself, except one that reopens a `user`
+  decision: ask the user and write in their answer as `user`. Pick the
+  smallest option that lets every phase or epic reach its done-when,
+  write it in as a decision with source `default`, and log both sides
+  and your evidence in `## Review`. Set `Status: ready`. Budget end is not
+  approval, so never call it `reviewed`.
 
 ## 7. Hand off and stop
 
 Fill `## Review`. Reply with the plan path, one line per phase or epic,
 rounds used, and the models that ran.
 
-- Reviewed plan: end with "Plan ready. Say which phase to build, and with
-  what."
-- Reviewed map: end with "Map ready. No epic is buildable yet. Say which
-  epic to blueprint first." Recommend E1.
-- Stuck: show each open dispute, both sides in 2-3 lines, and the
-  decision you need from the user.
+- `reviewed` or `ready`: for `ready`, first list each item you settled:
+  the finding, your call, and why. Then end with "Plan ready. Start with
+  P1: <one line>. Say go, and with what." For a map, start with E1's P1.
 - Draft: say what stopped the review and what the user can do about it.
 
 That reply is your last action. No code, branches, commits, installs, or

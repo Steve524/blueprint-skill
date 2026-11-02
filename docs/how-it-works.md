@@ -18,7 +18,7 @@ Then it picks a level:
 | Level | When | Output |
 |---|---|---|
 | Plan | Every phase can get files, steps, and an exact check today | `docs/plans/<date>-<slug>.md` |
-| Initiative | A later part depends on what earlier work teaches you | `docs/plans/<date>-<slug>-initiative.md`, a map of epics |
+| Initiative | A later part depends on what earlier work teaches you | `docs/plans/<date>-<slug>-initiative.md`, a map of epics, with E1 planned in full |
 | Neither | It fits one obvious commit | A short inline plan instead |
 
 ## 2. Recon
@@ -46,7 +46,7 @@ The interview keeps going while C runs. Only decisions that need its answers wai
 
 - **Assumptions ledger:** each line has a source and a status: `confirmed`, `assumed`, `contested`, or `unverified`.
 - **Decision map:** load-bearing decisions (a wrong answer costs a rewrite, a migration, a security hole, or trust) and cosmetic ones.
-- **Questions:** one per message, at most 4 lines, worded so "yes" takes the recommendation.
+- **Questions:** up to 5 in one message, load-bearing first, at most 4 lines each, worded so "yes" takes the recommendation. Extra ones take the recommendation and show in the wrap-up.
 
 Good question:
 
@@ -66,7 +66,7 @@ Research: <brief path, or none>
 ## Assumptions
 ## Phases             table, then one block per phase:
 ### P1: <outcome>     Covers, Files, Steps, Done when, Excludes
-## Risks and open questions
+## Risks             no TBDs: open questions become decisions before council
 ## Review
 ```
 
@@ -91,11 +91,11 @@ The coordinator checks every finding itself and re-grades its severity. It fixes
 | Outcome | Rule | Status |
 |---|---|---|
 | Agreed | Every member APPROVEs the current revision | `reviewed` |
-| Stuck | Disputed after two replies, or out of rounds | `stuck`, you decide |
+| Settled | Disputed after two replies, or out of rounds | `ready`: the coordinator picks the smallest option that reaches every done-when, and logs both sides. A reopened `user` decision still goes to you |
 | Can't run | Council members unreachable | `draft` |
 
 Rounds: 3. Up to 5 only for auth, security, data loss, migrations, or money, while an evidenced blocker or should is open.
 
 ## 6. Hand-off
 
-You get the plan path, one line per phase, the rounds used, and the models that ran. A reviewed plan ends with "Say which phase to build, and with what." A reviewed map asks which epic to blueprint first.
+You get the plan path, one line per phase, the rounds used, and the models that ran. A `reviewed` or `ready` plan ends with "Plan ready. Start with P1: <one line>." A map starts with E1's P1. `ready` also lists each call the coordinator made.

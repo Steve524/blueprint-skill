@@ -46,11 +46,11 @@ What to expect, in order:
 1. Up to one message asking for the goal, done-when, or out-of-scope, if your request didn't say.
 2. A note on which recon groups run and which are skipped.
 3. An assumptions ledger. If deep research could help, a question packet comes first: approve, edit, or skip it in the same reply.
-4. Decision questions, one per message, each with a recommendation. Reply "yes" to take it, or "accept all remaining recommendations".
-5. A wrap-up with the small defaults and a 5-line summary. Say "ok" or correct it.
+4. Up to 5 decision questions in one message, each with a recommendation. Reply by number (`1 yes, 2 B, 4 no: use X`); a skipped number takes the recommendation. Or say "accept all recommendations".
+5. A wrap-up with the defaults it didn't ask about and a 5-line summary. Say "ok" or correct it.
 6. The phase table. Say "ok" or "regroup".
 7. Council rounds run on their own.
-8. The hand-off: the plan path, the phases, rounds, the models that ran. Nothing is built.
+8. The hand-off: the plan path, the phases, rounds, the models that ran, and "Start with P1". Nothing is built.
 
 ## 4. Build from the plan
 
@@ -67,6 +67,6 @@ Each phase is written so a builder with no chat history can run it from the plan
 | Symptom | Cause | Fix |
 |---|---|---|
 | The plan stays `Status: draft` | Council couldn't reach three providers, or a delegate failed twice | Read the hand-off. It names what's missing |
-| `Status: stuck` | A dispute after two replies, or out of rounds | The hand-off shows both sides. You decide |
+| `Status: ready` | A dispute after two replies, or out of rounds | The coordinator settled it. The hand-off lists each call; correct any you disagree with |
 | A delegate count warning | More than 3 delegates at once | Cut questions, or lower `instances` in `roster.yaml` |
 | The skill doesn't trigger | Its trigger is the word "blueprint" | Start your message with `blueprint` |
